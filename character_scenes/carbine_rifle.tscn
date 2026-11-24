@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ci30ncx2ls68v"]
+
+[ext_resource type="Texture2D" uid="uid://c575sjy5c4jaa" path="res://assets/guns/carbine blaster v2.png" id="1_0xkgw"]
+[ext_resource type="Script" uid="uid://5o0o6v13fxdd" path="res://scripts/gun.gd" id="1_5eac3"]
+[ext_resource type="PackedScene" uid="uid://dsayy25hobpbm" path="res://character_scenes/carbine_round.tscn" id="2_geqd7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eac3"]
+atlas = ExtResource("1_0xkgw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geqd7"]
+atlas = ExtResource("1_0xkgw")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gclww"]
+atlas = ExtResource("1_0xkgw")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj3pj"]
+atlas = ExtResource("1_0xkgw")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5l0a"]
+atlas = ExtResource("1_0xkgw")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frmyk"]
+atlas = ExtResource("1_0xkgw")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxull"]
+atlas = ExtResource("1_0xkgw")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g36yv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eac3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geqd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gclww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj3pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5l0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frmyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxull")
+}],
+"loop": 0,
+"name": &"reload",
+"speed": 15.0
+}]
+
+[node name="CarbineRifle" type="Node2D" unique_id=205040822]
+script = ExtResource("1_5eac3")
+projectile = ExtResource("2_geqd7")
+ammo_capacity = 5
+reload_time = 3
+semi_auto = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=585627713]
+sprite_frames = SubResource("SpriteFrames_g36yv")
+animation = &"idle"
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1450983422]
+position = Vector2(21, -1)
+
+[node name="FireRate" type="Timer" parent="." unique_id=53235556]
+
+[node name="ReloadTime" type="Timer" parent="." unique_id=1689151431]

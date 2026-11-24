@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://blxsn1rnwvt88"]
+
+[ext_resource type="Script" uid="uid://dvgsjor6o6x1a" path="res://scripts/renegade.gd" id="1_fln2u"]
+[ext_resource type="Texture2D" uid="uid://dy0e5ol00qeg2" path="res://assets/renegade/renegade v2.png" id="2_ivapr"]
+[ext_resource type="PackedScene" uid="uid://gklegayolyxa" path="res://character_scenes/sawtooth_rifle.tscn" id="3_ivapr"]
+[ext_resource type="PackedScene" uid="uid://ci30ncx2ls68v" path="res://character_scenes/carbine_rifle.tscn" id="4_8saa4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g36yv"]
+size = Vector2(26, 64)
+
+[node name="Renegade" type="CharacterBody2D" unique_id=587196691 groups=["player"]]
+script = ExtResource("1_fln2u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1248907409 groups=["player"]]
+texture = ExtResource("2_ivapr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=370638126]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_g36yv")
+
+[node name="Weapons" type="Node2D" parent="." unique_id=154669617]
+
+[node name="SawtoothRifle" parent="Weapons" unique_id=1112278985 instance=ExtResource("3_ivapr")]
+
+[node name="CarbineRifle" parent="Weapons" unique_id=205040822 instance=ExtResource("4_8saa4")]

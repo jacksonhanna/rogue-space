@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://k66mgg5ss8nb"]
+
+[ext_resource type="Script" uid="uid://3vlyoxukdt62" path="res://scripts/basic_enemy.gd" id="1_6x6rk"]
+[ext_resource type="Texture2D" uid="uid://cw5y18ulq7pf7" path="res://assets/urn/urn_grunt.png" id="2_dlklc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htlxk"]
+size = Vector2(19, 41)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htlxk"]
+radius = 390.28836
+
+[node name="Enemy" type="CharacterBody2D" unique_id=257579920 groups=["enemy"]]
+script = ExtResource("1_6x6rk")
+health = 100
+speed = 150
+jump_velocity = -400
+attack_range = 200
+reload_time = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1536774317]
+texture = ExtResource("2_dlklc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1980168258]
+position = Vector2(0.5, 11.5)
+shape = SubResource("RectangleShape2D_htlxk")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=2099455264]
+position = Vector2(-11, 14)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=67535662]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1728216555]
+shape = SubResource("CircleShape2D_htlxk")
+
+[node name="ReloadTimer" type="Timer" parent="." unique_id=1951240159]
+one_shot = true
+autostart = true
+
+[node name="AgroTimer" type="Timer" parent="." unique_id=1597291063]
+one_shot = true
+
+[connection signal="timeout" from="AgroTimer" to="." method="_on_agro_timer_timeout"]
