@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bj0w1wib48v8e"]
 
+[ext_resource type="Script" uid="uid://8bgnevh6wqo" path="res://scripts/npc.gd" id="1_npc"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adyyn"]
 size = Vector2(66, 58)
 
 [node name="NPC" type="Node2D" unique_id=807064879]
+script = ExtResource("1_npc")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1191046030]
 anchors_preset = 8
@@ -24,6 +27,7 @@ grow_vertical = 2
 shape = SubResource("RectangleShape2D_adyyn")
 
 [node name="Label" type="Label" parent="." unique_id=927274875]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -35,4 +39,5 @@ offset_right = 20.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
+text = "Talk"
 horizontal_alignment = 1

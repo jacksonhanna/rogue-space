@@ -132,7 +132,7 @@ fire_rate = 0.05
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1122125852]
 sprite_frames = SubResource("SpriteFrames_g36yv")
-animation = &"idle"
+animation = &"reload"
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=586243967]
 position = Vector2(21, -1)
