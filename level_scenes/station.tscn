@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://baqown5kgbh7i" path="res://assets/levels/station-tileset.png" id="1_4gls7"]
 [ext_resource type="PackedScene" uid="uid://blxsn1rnwvt88" path="res://character_scenes/renegade.tscn" id="2_4gls7"]
 [ext_resource type="PackedScene" uid="uid://btxb80m4e6pa5" path="res://camera.tscn" id="3_c04iq"]
+[ext_resource type="PackedScene" uid="uid://bj0w1wib48v8e" path="res://character_scenes/npc.tscn" id="4_qkk13"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qkk13"]
 texture = ExtResource("1_4gls7")
@@ -224,3 +225,6 @@ position = Vector2(143, 134)
 current_state = 1
 
 [node name="Camera" parent="." unique_id=753456286 instance=ExtResource("3_c04iq")]
+
+[node name="NPC" parent="." unique_id=807064879 instance=ExtResource("4_qkk13")]
+position = Vector2(370, 194)
